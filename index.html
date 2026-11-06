@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Randy-Rondack Woodworking</title>
+<meta name="description" content="Designer and builder for custom woodworking products, including furniture and other projects.">
+<meta name="keywords" content="handyman, carpenter, repair, furniture repair, garbin, woodworking, woodworker, decks, windows, restoration, chairs, adirondack furniture">
+<meta property="og:title" content="Randy-Rondack Woodworking">
+<meta property="og:description" content="Randy Garbin sitting on a custom built Adirondack love seat.">
+<meta property="og:image" content="https://randyrondack.com/images/socialimage.jpg">
+<meta property="og:url" content="https://randyrondack.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#b8862e;--red:#8c1a1a;--serif:"Source Serif 4",Georgia,serif;--slab:"Roboto Slab",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:#f7f7f7;color:#333;font:18px/1.6 var(--serif)}
+img{max-width:100%;display:block}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h2{font:500 clamp(2rem,3vw,3.2rem)/1.1 var(--slab);color:var(--gold);text-align:center;margin:0 0 1.2em}
+.hero{position:relative;aspect-ratio:1926/1056;overflow:hidden;background:#3b2a1a}
+.slide{position:absolute;inset:0;background:center/cover;opacity:0;transition:opacity .8s}
+.slide.on{opacity:1}
+.hero:before{content:"";position:absolute;inset:0 0 85%;background:linear-gradient(rgba(130,65,0,.85),transparent);z-index:2;pointer-events:none}
+.cap{position:absolute;left:50%;top:46%;transform:translateX(-50%);border:2px solid #fff;background:rgba(0,0,0,.3);color:#fff;font:700 clamp(1rem,2.1vw,2.4rem) var(--slab);padding:.25em .8em;white-space:nowrap;text-shadow:0 1px 3px #000}
+.top{position:absolute;z-index:3;top:2.5%;left:0;right:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 12%}
+.logo img{height:clamp(40px,5.2vw,100px)}
+.pill{background:rgba(255,255,255,.85);border-radius:30px;font:700 clamp(.9rem,1.8vw,2.1rem) var(--slab);color:var(--red);padding:.25em 1.4em;text-align:center;text-decoration:none;white-space:nowrap}
+.right{display:flex;align-items:center;gap:6%;justify-content:center}
+.right .pill{color:#333;font-size:clamp(.75rem,1.2vw,1.4rem);padding:.45em 1.8em}
+.fb svg{width:clamp(24px,2.4vw,46px);height:auto;display:block}
+.dots{position:absolute;z-index:3;bottom:3.5%;left:0;right:0;display:flex;justify-content:center;gap:10px}
+.dots button{width:14px;height:14px;border-radius:50%;border:2px solid #fff;background:rgba(255,255,255,.3);padding:0;cursor:pointer}
+.dots button.on{background:#fff}
+.gap{background:#ededed;height:clamp(40px,6vw,115px)}
+.bar{background:var(--red);color:#fff;text-align:center;font:600 clamp(.8rem,1vw,1.1rem) var(--serif);padding:.35em 1em}
+.bar a{text-decoration:none;color:#fff}.bar a.e{color:#d9a441}
+#work{background:#ededed;padding:90px 24px 70px;text-align:center}
+#work>p{max-width:1100px;margin:0 auto 2em;font-size:.95rem}
+.gallery{list-style:none;margin:0 auto;padding:0;max-width:1500px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.gallery li{width:calc((100% - 70px)/6)}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover}
+.more{font:700 1.4rem var(--serif);color:#444;margin:40px 0 0}
+.wrap{max-width:1540px;margin:0 auto;padding:0 24px}
+#about{padding:70px 0 90px}
+.d{display:grid;grid-template-columns:1fr 752px;gap:40px;align-items:start}
+.d p,.m p{margin:0 0 1em;font-size:.95rem}
+.panel{background:#f3ebe2;padding:22px 22px 40px}
+.sm{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:30px 0 0}
+.sm span{display:block;width:68%;margin:auto}
+.m{display:none}
+#sub{background:#efefef;padding:40px 0}
+.sub{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.sub h3{font:500 1.5rem/1.3 var(--slab);color:#555;text-align:center;margin:0 0 1.2em}
+.go{display:block;width:max-content;margin:auto;background:var(--gold);color:#fff;font:400 1.6rem var(--slab);padding:.5em 1.6em;text-decoration:none}
+footer{background:var(--gold);color:#fff;font-size:.75rem;padding:.9em 0}
+#up{position:fixed;right:20px;top:55%;width:42px;height:42px;border-radius:50%;border:0;background:#aaa;color:#fff;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+#up.show{opacity:.85;pointer-events:auto}
+dialog{border:0;padding:0;background:transparent;max-width:94vw;color:#fff;overflow:visible}
+dialog::backdrop{background:rgba(0,0,0,.88)}
+dialog img{max-height:84vh;margin:0 auto}
+dialog p{text-align:center;margin:8px 0 0}
+dialog button{position:fixed;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;padding:12px}
+#x{top:8px;right:14px}#pv{left:8px;top:45%}#nx{right:8px;top:45%}
+@media(max-width:900px){
+.hero{aspect-ratio:auto;height:78vw}.top{grid-template-columns:1fr;justify-items:center;gap:8px;padding:0 6%}.logo{display:none}.right{gap:16px;flex-direction:column}
+.gap{display:none}.gallery li{width:min(100%,340px)}
+.d{display:none}.m{display:block;max-width:560px;margin:0 auto}.m .panel{padding:0;background:none}.sm span{width:80%}
+.m>span{display:block;margin-bottom:20px}
+.sub{grid-template-columns:1fr;gap:30px}#up{display:none}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}}
+
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="slide on" style="background-image:url(images/hero/custom-shutters.jpg)" role="img" aria-label="Custom Designed and Built Shutters"><span class="cap">Custom Designed and Built Shutters</span></div>
+<div class="slide" style="background-image:url(images/hero/liquor-cabinet.jpg)" role="img" aria-label="Custom Designed Liquor Cabinet"><span class="cap">Custom Designed Liquor Cabinet</span></div>
+<div class="slide" style="background-image:url(images/hero/dining-table.jpg)" role="img" aria-label="Dining Table"><span class="cap">Dining Table</span></div>
+<div class="slide" style="background-image:url(images/hero/trim-repair.jpg)" role="img" aria-label="Trim Repair and Restoration"><span class="cap">Trim Repair and Restoration</span></div>
+<div class="slide" style="background-image:url(images/hero/adirondack-patio-set.jpg)" role="img" aria-label="Adirondack Patio Set"><span class="cap">Adirondack Patio Set</span></div>
+<div class="slide" style="background-image:url(images/hero/garden-shed-door.jpg)" role="img" aria-label="Garden Shed Door Restoration"><span class="cap">Garden Shed Door Restoration</span></div>
+
+<div class="top">
+ <a class="logo" href="#"><img src="images/randi-rondack-logo-red-72.png" alt="Randy-Rondack logo" onerror="this.remove()"></a>
+ <a class="pill" href="#">Randy-Rondack Woodworking</a>
+ <div class="right">
+  <a class="fb" href="https://www.facebook.com/randyrondack" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="#111" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.900V12h3.4l-.5 3.500h-2.900v8.400A12 12 0 0 0 24 12z"/></svg></a>
+  <a class="pill" href="tel:2153707082">215.370.7082</a>
+ </div>
+</div>
+<div class="dots"><button aria-label="Show slide 1"></button><button aria-label="Show slide 2"></button><button aria-label="Show slide 3"></button><button aria-label="Show slide 4"></button><button aria-label="Show slide 5"></button><button aria-label="Show slide 6"></button></div>
+</header>
+<div class="gap"></div>
+<div class="bar">Call <a href="tel:2153707082">215.370.7082</a> or <a class="e" href="mailto:randy@randyrondack.com?subject=Saw%20your%20website">email</a> me.</div>
+
+<main>
+<section id="work">
+ <h2>Project Gallery</h2>
+ <p>This is a small sampling of the work I’ve mostly <b>designed <i>and</i> built</b>, from finished furniture, to more utilitarian pieces done for myself and clients.<br>Click on the images for a larger photo.</p>
+ <ul class="gallery">
+<li><a href="images/full/liquor-cabinet.jpg" data-cap="Liquor Cabinet"><img src="images/thumbs/liquor-cabinet.jpg" alt="Liquor Cabinet" loading="lazy"></a></li>
+<li><a href="images/full/woodshed.jpg" data-cap="Woodshed"><img src="images/thumbs/woodshed.jpg" alt="Woodshed" loading="lazy"></a></li>
+<li><a href="images/full/dining-table.jpg" data-cap="Dining Table"><img src="images/thumbs/dining-table.jpg" alt="Dining Table" loading="lazy"></a></li>
+<li><a href="images/full/garage-pergola.jpg" data-cap="Garage Pergola"><img src="images/thumbs/garage-pergola.jpg" alt="Garage Pergola" loading="lazy"></a></li>
+<li><a href="images/full/shutters.jpg" data-cap="Shutters"><img src="images/thumbs/shutters.jpg" alt="Shutters" loading="lazy"></a></li>
+<li><a href="images/full/mission-end-table.jpg" data-cap="Mission End Table"><img src="images/thumbs/mission-end-table.jpg" alt="Mission End Table" loading="lazy"></a></li>
+<li><a href="images/full/bench-backing.jpg" data-cap="Bench Backing"><img src="images/thumbs/bench-backing.jpg" alt="Bench Backing" loading="lazy"></a></li>
+<li><a href="images/full/adirondack-chairs.jpg" data-cap="Adirondack Chairs"><img src="images/thumbs/adirondack-chairs.jpg" alt="Adirondack Chairs" loading="lazy"></a></li>
+<li><a href="images/full/barbecue-table.jpg" data-cap="Barbecue Table"><img src="images/thumbs/barbecue-table.jpg" alt="Barbecue Table" loading="lazy"></a></li>
+<li><a href="images/full/little-library.jpg" data-cap="Little Library"><img src="images/thumbs/little-library.jpg" alt="Little Library" loading="lazy"></a></li>
+<li><a href="images/full/stained-glass-frame.jpg" data-cap="Stained Glass Frame"><img src="images/thumbs/stained-glass-frame.jpg" alt="Stained Glass Frame" loading="lazy"></a></li>
+<li><a href="images/full/freestanding-shelf.jpg" data-cap="Freestanding Shelf"><img src="images/thumbs/freestanding-shelf.jpg" alt="Freestanding Shelf" loading="lazy"></a></li>
+<li><a href="images/full/stairs.jpg" data-cap="Stairs"><img src="images/thumbs/stairs.jpg" alt="Stairs" loading="lazy"></a></li>
+<li><a href="images/full/catch-all.jpg" data-cap="Catch-all"><img src="images/thumbs/catch-all.jpg" alt="Catch-all" loading="lazy"></a></li>
+<li><a href="images/full/stereo-stand.jpg" data-cap="Stereo Stand"><img src="images/thumbs/stereo-stand.jpg" alt="Stereo Stand" loading="lazy"></a></li>
+<li><a href="images/full/can-dispenser.jpg" data-cap="Can Dispenser"><img src="images/thumbs/can-dispenser.jpg" alt="Can Dispenser" loading="lazy"></a></li>
+<li><a href="images/full/big-heavy-doors.jpg" data-cap="Big Heavy Doors"><img src="images/thumbs/big-heavy-doors.jpg" alt="Big Heavy Doors" loading="lazy"></a></li>
+<li><a href="images/full/cutting-board.jpg" data-cap="Cutting Board"><img src="images/thumbs/cutting-board.jpg" alt="Cutting Board" loading="lazy"></a></li>
+<li><a href="images/full/blue-bird-house.jpg" data-cap="Blue Bird House"><img src="images/thumbs/blue-bird-house.jpg" alt="Blue Bird House" loading="lazy"></a></li>
+<li><a href="images/full/gavel-box.jpg" data-cap="Gavel Box"><img src="images/thumbs/gavel-box.jpg" alt="Gavel Box" loading="lazy"></a></li>
+<li><a href="images/full/bat-house.jpg" data-cap="Bat House"><img src="images/thumbs/bat-house.jpg" alt="Bat House" loading="lazy"></a></li>
+<li><a href="images/full/sofa-table.jpg" data-cap="Sofa Table"><img src="images/thumbs/sofa-table.jpg" alt="Sofa Table" loading="lazy"></a></li>
+<li><a href="images/full/iphone-stand.jpg" data-cap="Iphone Stand"><img src="images/thumbs/iphone-stand.jpg" alt="Iphone Stand" loading="lazy"></a></li>
+<li><a href="images/full/candle-holders.jpg" data-cap="Candle Holders"><img src="images/thumbs/candle-holders.jpg" alt="Candle Holders" loading="lazy"></a></li>
+<li><a href="images/full/recording-booth.jpg" data-cap="Recording Booth"><img src="images/thumbs/recording-booth.jpg" alt="Recording Booth" loading="lazy"></a></li>
+ </ul>
+ <p class="more">Many more photos, information, and stories at the <a href="https://www.facebook.com/randyrondack">Randy-Rondack Facebook Page</a>.</p>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <h2>A bit about me…</h2>
+  <div class="d"><div><p>My name is Randy Garbin. I build stuff. I fix things. I’d like to be your new handy-man.</p>
+<p>After a long time staring at a computer, I decided I would rather make things that actually cast a shadow.</p>
+<p>For as long as I can remember, I had a knack for fixing things and sometimes making them better. I had to fix them because growing up we didn’t have the money to buy replacements. My mother had to pinch pennies so hard they cried for mercy.</p>
+<p>Whenever Mom had to get something repaired, she often found herself at the mercy of unscrupulous contractors who took advantage of the fact that she was a woman who probably wouldn’t know better. As a result, I grew up learning how to figure out things for myself.</p>
+<p>After a career as a creative, I began to collect and acquire the necessary tools for a fully-equipped wood shop, where I honed my skills further. Living in an 80-year-old house allows for plenty of practice. Since that time, I’ve made furniture, hung 200-pound doors, built basement hatchway steps, and completed dozens and dozens of handyman tasks for my family and our friends.</p>
+<p>I do basic woodworking, home maintenance and repair. I’ve also <b>designed and built</b> Mission-style end tables, sofa arm tables, Adirondack-style patio furniture, bookshelves, birdhouses, and I’ve assembled more than my fair share of Ikea furniture.</p>
+<p>I don’t do house painting, climb on roofs, or anything that requires a permit.</p>
+<p>If it’s something I can’t do, I’ll tell you.</p>
+<p><i>(I built this website too!)</i></p></div><div class="panel"><span><img src="images/randy-on-the-rondack.jpg" alt="Randy Garbin sitting on a custom built Adirondack love seat" onerror="this.parentNode.hidden=true"></span><div class="sm"><span><img src="images/randy-mom.jpg" alt="Randy and his mom" onerror="this.parentNode.hidden=true"></span><span><img src="images/randy-mom-stoop.jpg" alt="Randy and his mom on the stoop" onerror="this.parentNode.hidden=true"></span></div></div></div>
+  <div class="m"><span class="panel"><img src="images/randy-on-the-rondack.jpg" alt="Randy Garbin sitting on a custom built Adirondack love seat" onerror="this.parentNode.hidden=true"></span><p><b>My name is Randy Garbin. I build stuff. I fix things. I’d like to be your new handy-man.</b></p>
+<p>After a long time staring at a computer, I decided I would rather make things that actually cast a shadow.</p>
+<p>For as long as I can remember, I had a knack for fixing things and sometimes making them better. I had to fix them because we didn’t have the money to buy replacements. I grew up in a single-parent household where Mom had to pinch pennies so hard they cried for mercy.</p>
+<p>Whenever Mom had to get something fixed, she often found herself at the mercy of unscrupulous contractors who took advantage of the fact that she was a woman who probably wouldn’t know better. As a result, I grew up learning how to figure out things for myself.</p>
+<p>In 2017, I began to collect and acquire the necessary tools for a fully-equipped work shop, where I honed my skills further. Living in an 80-year-old house allows plenty of practice. Since that time, I’ve made many pieces of furniture, hung 200-pound doors, built basement hatchway steps, and completed dozens and dozens of handyman tasks for my family and our friends.</p>
+<p>I do basic woodworking, home maintenance and repair. I’ve also designed and built Mission-style end tables, sofa arm tables, Adirondack-style patio furniture, bookshelves, birdhouses, and things I haven’t even thought of yet. I’ve also assembled more than my fair share of Ikea furniture, and I can figure out your home network.</p>
+<p>I don’t do painting, climb on roofs, or anything that requires a permit.</p>
+<p>If it’s something I can’t do, I’ll tell you.</p>
+<p><i>(I built this website too!)</i></p><div class="sm"><span><img src="images/randy-mom.jpg" alt="Randy and his mom" onerror="this.parentNode.hidden=true"></span><span><img src="images/randy-mom-stoop.jpg" alt="Randy and his mom on the stoop" onerror="this.parentNode.hidden=true"></span></div></div>
+ </div>
+</section>
+
+<section id="sub">
+ <div class="wrap sub">
+  <span><img src="images/makingthing.jpg" alt="Randy working in his shop" onerror="this.parentNode.hidden=true"></span>
+  <div><h3>Read more about this adventure at my Substack publication, Randy by Name.</h3>
+  <a class="go" href="https://open.substack.com/pub/randybyname/p/finding-happiness-in-the-hand-made?r=1qsddp&amp;utm_campaign=post&amp;utm_medium=web">Go!</a></div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap">© 2026 Randy-Rondack Woodworking. Designed By Coffee Cup Media LLC.</div></footer>
+<button id="up" aria-label="Back to top">&#8963;</button>
+<dialog id="box" aria-label="Photo viewer"><button id="x" aria-label="Close">&times;</button><button id="pv" aria-label="Previous">&#8249;</button><button id="nx" aria-label="Next">&#8250;</button><img alt=""><p></p></dialog>
+<script>
+const S=[...document.querySelectorAll(".slide")],D=[...document.querySelectorAll(".dots button")];let c=0,t;
+function go(i){S[c].classList.remove("on");D[c].classList.remove("on");c=(i+S.length)%S.length;S[c].classList.add("on");D[c].classList.add("on")}
+function play(){clearInterval(t);if(!matchMedia("(prefers-reduced-motion:reduce)").matches)t=setInterval(()=>go(c+1),5000)}
+D.forEach((b,i)=>b.onclick=()=>{go(i);play()});go(0);play();
+const L=[...document.querySelectorAll(".gallery a")],B=document.getElementById("box"),I=B.querySelector("img"),P=B.querySelector("p");let n=0;
+function show(i){n=(i+L.length)%L.length;I.src=L[n].href;I.alt=P.textContent=L[n].dataset.cap}
+L.forEach((a,i)=>a.onclick=e=>{e.preventDefault();show(i);B.showModal()});
+document.getElementById("x").onclick=()=>B.close();document.getElementById("pv").onclick=()=>show(n-1);document.getElementById("nx").onclick=()=>show(n+1);
+B.onclick=e=>{if(e.target===B)B.close()};
+addEventListener("keydown",e=>{if(!B.open)return;if(e.key==="ArrowLeft")show(n-1);if(e.key==="ArrowRight")show(n+1)});
+const U=document.getElementById("up");addEventListener("scroll",()=>U.classList.toggle("show",scrollY>400));U.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+
+</script>
+</body>
+</html>
