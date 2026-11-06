@@ -116,7 +116,7 @@ dialog button{position:fixed;background:none;border:0;color:#fff;font-size:2.4re
 </div>
 <div class="dots"><button aria-label="Show slide 1"></button><button aria-label="Show slide 2"></button><button aria-label="Show slide 3"></button><button aria-label="Show slide 4"></button><button aria-label="Show slide 5"></button><button aria-label="Show slide 6"></button></div>
 </header>
-<div class="bar">Call <a href="tel:2153707082">215.370.7082</a> or <a class="e" href="mailto:randy@randyrondack.com?subject=Saw%20your%20website">email</a> me.</div>
+<div class="bar">Call <a href="tel:2153707082">215.370.7082</a> or <a class="e em" href="#" data-u="ydnar" data-d="moc.kcadnorydnar" data-s="etisbew ruoy waS">email</a> me.</div>
 
 <main>
 <section id="work">
@@ -202,6 +202,7 @@ B.onclick=e=>{if(e.target===B)B.close()};
 addEventListener("keydown",e=>{if(!B.open)return;if(e.key==="ArrowLeft")show(n-1);if(e.key==="ArrowRight")show(n+1)});
 const U=document.getElementById("up");addEventListener("scroll",()=>U.classList.toggle("show",scrollY>400));U.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 
+(function(){var r=function(x){return x.split('').reverse().join('')};[].forEach.call(document.querySelectorAll('a.em'),function(a){var u=r(a.dataset.u),d=r(a.dataset.d),s=a.dataset.s?r(a.dataset.s):'';a.href='mailto:'+u+'@'+d+(s?'?subject='+encodeURIComponent(s):'')})})();
 </script>
 </body>
 </html>
