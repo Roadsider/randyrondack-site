@@ -23,13 +23,14 @@
 body{margin:0;background:#f7f7f7;color:#333;font:18px/1.6 var(--serif)}
 img{max-width:100%;display:block}
 a{color:var(--gold)}
+strong,b{font-weight:600}
 a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 h2{font:500 clamp(2rem,3vw,3.2rem)/1.1 var(--slab);color:var(--gold);text-align:center;margin:0 0 1.2em}
 .hero{position:relative;aspect-ratio:1926/1056;overflow:hidden;background:#3b2a1a}
 .slide{position:absolute;inset:0;background:center/cover;opacity:0;transition:opacity .8s}
 .slide.on{opacity:1}
 .hero:before{content:"";position:absolute;inset:0 0 85%;background:linear-gradient(rgba(130,65,0,.85),transparent);z-index:2;pointer-events:none}
-.cap{position:absolute;left:50%;top:46%;transform:translateX(-50%);border:1px solid #fff;background:rgba(0,0,0,.3);color:#fff;font:700 clamp(1rem,2.1vw,2.4rem) var(--serif);padding:.25em .8em;white-space:nowrap;text-shadow:0 1px 3px #000}
+.cap{position:absolute;left:50%;top:46%;transform:translateX(-50%);border:1px solid #fff;background:rgba(0,0,0,.3);color:#fff;font:600 clamp(1rem,2.1vw,2.4rem) var(--serif);padding:.25em .8em;white-space:nowrap;text-shadow:0 1px 3px #000}
 .top{position:absolute;z-index:3;top:2.5%;left:0;right:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 12%}
 .logo img{height:clamp(40px,5.2vw,100px)}
 .pill{background:rgba(255,255,255,.85);border-radius:30px;font:700 clamp(.9rem,1.8vw,2.1rem) var(--slab);color:var(--red);padding:.25em 1.4em;text-align:center;text-decoration:none;white-space:nowrap}
@@ -49,7 +50,7 @@ h2{font:500 clamp(2rem,3vw,3.2rem)/1.1 var(--slab);color:var(--gold);text-align:
 .gallery{list-style:none;margin:0 auto;padding:0;max-width:1500px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 .gallery li{width:calc((100% - 70px)/6)}
 .gallery img{width:100%;aspect-ratio:1;object-fit:cover}
-.more{font:700 1.4rem var(--serif);color:#444;margin:40px 0 0}
+.more{font:600 1.4rem var(--serif);color:#444;margin:40px 0 0}
 .wrap{max-width:1540px;margin:0 auto;padding:0 24px}
 #about{padding:70px 0 90px}
 .d{display:grid;grid-template-columns:1fr 752px;gap:40px;align-items:start}
