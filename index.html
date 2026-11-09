@@ -330,7 +330,8 @@ dialog .nx{right:max(10px,env(safe-area-inset-right,0px));top:50%}
      </div>
    </div>
    <div id="formwrap">
-    <form id="cf" novalidate>
+    <form id="cf" action="https://formspree.io/f/xljjyqow" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="New request from randyrondack.com">
       <div class="f"><label for="name">Full name<em aria-hidden="true">*</em></label><input id="name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><p class="err" id="e-name" role="alert"></p></div>
       <div class="row">
         <div class="f"><label for="phone">Phone<small>optional</small></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
@@ -338,7 +339,7 @@ dialog .nx{right:max(10px,env(safe-area-inset-right,0px));top:50%}
       </div>
       <div class="f"><label for="town">Town<em aria-hidden="true">*</em></label><input id="town" name="town" type="text" autocomplete="address-level2" required aria-describedby="e-town"><p class="err" id="e-town" role="alert"></p></div>
       <div class="f"><label for="msg">Requests or questions<small>optional</small></label><textarea id="msg" name="message" placeholder="What are you looking to build, fix or restore?"></textarea></div>
-      <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
       <div class="actions"><button class="btn red" type="submit" id="send">Send My Request</button><p class="req"><b>*</b> Required</p></div>
     </form>
    </div>
@@ -353,9 +354,9 @@ dialog .nx{right:max(10px,env(safe-area-inset-right,0px));top:50%}
 
 <script>
 (function(){
-  /* Paste a form service URL (Formspree, Web3Forms, etc.) here to deliver requests by form.
-     While it is empty, sending opens the visitor's email app with the request filled in. */
-  var ENDPOINT="";
+  /* Requests are delivered by Formspree. If this is ever emptied, sending falls back to opening
+     the visitor's email app with the request filled in. */
+  var ENDPOINT="https://formspree.io/f/xljjyqow";
 
   /* slideshow */
   var S=[].slice.call(document.querySelectorAll(".slide")),D=[].slice.call(document.querySelectorAll("#dots button")),C=document.getElementById("slidecap"),c=0,t;
